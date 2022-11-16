@@ -73,35 +73,35 @@
 71,71,Mother Witch,4,legendary,unit,FALSE,all
 72,72,Electro Spirit,1,common,unit,FALSE,all
 73,73,Electro Giant,7,epic,unit,FALSE,towers
-74,74,Cannon,,,,,
-75,75,Goblin Hut,,,,,
-76,76,Mortar,,,,,
-77,77,Inferno Tower,,,,,
-78,78,Bomb Tower,,,,,
-79,79,Barbarian Hut,,,,,
-80,80,Tesla,,,,,
-81,81,Elixir Collector,,,,,
-82,82,X-Bow,,,,,
-83,83,Tombstone,,,,,
-84,84,Furnace,,,,,
-85,85,Goblin Cage,,,,,
-86,86,Goblin Drill,,,,,
-87,87,Fireball,,,,,
-88,88,Arrows,,,,,
-89,89,Rage,,,,,
-90,90,Rocket,,,,,
-91,91,Goblin Barrel,,,,,
-92,92,Freeze,,,,,
-93,93,Mirror,,,,,
-94,94,Lightning,,,,,
-95,95,Zap,,,,,
-96,96,Poison,,,,,
-97,97,Graveyard,,,,,
-98,98,The Log,,,,,
-99,99,Tornado,,,,,
-100,100,Clone,,,,,
-101,101,Earthquake,,,,,
-102,102,Barbarian Barrel,,,,,
-103,103,Heal Spirit,,,,,
-104,104,Giant Snowball,,,,,
-105,105,Royal Delivery,,,,,
+74,74,Cannon,3,common,tower,FALSE,ground
+75,75,Goblin Hut,5,rare,spawner,FALSE,all
+76,76,Mortar,4,common,tower,FALSE,towers
+77,77,Inferno Tower,5,rare,tower,FALSE,all
+78,78,Bomb Tower,4,rare,tower,FALSE,ground
+79,79,Barbarian Hut,6,rare,spawner,FALSE,ground
+80,80,Tesla,4,common,tower,FALSE,all
+81,81,Elixir Collector,6,rare,tower,FALSE,null
+82,82,X-Bow,6,epic,tower,FALSE,all
+83,83,Tombstone,3,rare,spawner,FALSE,ground
+84,84,Furnace,4,rare,spawner,FALSE,ground
+85,85,Goblin Cage,4,rare,spawner,FALSE,ground
+86,86,Goblin Drill,4,epic,spawner,FALSE,ground
+87,87,Fireball,4,rare,spell,FALSE,all
+88,88,Arrows,3,common,spell,FALSE,all
+89,89,Rage,2,epic,spell,FALSE,all
+90,90,Rocket,6,rare,spell,FALSE,all
+91,91,Goblin Barrel,3,epic,spell,FALSE,ground
+92,92,Freeze,4,epic,spell,FALSE,all
+93,93,Mirror,previous,epic,spell,FALSE,all
+94,94,Lightning,6,epic,spell,FALSE,all
+95,95,Zap,2,common,spell,FALSE,all
+96,96,Poison,4,epic,spell,FALSE,all
+97,97,Graveyard,5,legendary,spell,FALSE,ground
+98,98,The Log,2,legendary,spell,FALSE,ground
+99,99,Tornado,3,epic,spell,FALSE,all
+100,100,Clone,3,epic,spell,FALSE,all
+101,101,Earthquake,3,rare,spell,FALSE,ground
+102,102,Barbarian Barrel,2,rare,spell,FALSE,ground
+103,103,Heal Spirit,1,rare,unit,FALSE,all
+104,104,Giant Snowball,2,common,spell,FALSE,all
+105,105,Royal Delivery,3,common,spell,FALSE,all

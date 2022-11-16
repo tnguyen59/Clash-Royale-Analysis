@@ -10,6 +10,30 @@ isSplash
 isRange
 unit type ie unit, tower, spawner, spell can use 1 2 3 4?
 
+cardlist columns:
+id - card id
+card - card name
+cost - elixer cost
+rarity - rarity (common, rare, epic, legendary, champion)
+type - type of card (unit, defense, spawner, siege, building, spell)
+isFlying - if card is a unit and is flying -> true else if card is a unit and not flying -> false else -> NaN
+target - what the card itself targets (ground, air, all, units) 
+troop_spawned - if the card spawns a troop -> card spawned else -> NaN
+
+Important notes:
+Mirror is noted as having cost of 0
+Clone and target units
+Mirror and Clone are marked as spawning "Any" since they can become any unit
+Lava Pups, Golemites, Elixer Golemites, Elixer Blobs, Pigs, and Goblin Brawler are all spawned but do not have playable cards
+  - their rarity matches the spawning card
+  - they have no cost
+The type of building has been split up into 4 categories
+  - defense: buildings that have no offensive capability like cannon, inferno tower, etc.
+  - spawner: buildings that spawn troops continously
+  - siege: buildings used to attack enemy towers
+  - builings: elixer collector and goblin cage
+Target is only about what the card has listed as a target
+
 # Per deck
 avgCost
 percentage of type of unit

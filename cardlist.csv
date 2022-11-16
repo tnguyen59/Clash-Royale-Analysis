@@ -1,107 +1,113 @@
-,id,card,elixer cost,rarity,type,isFlying,target
-0,0,Knight,3,common,unit,FALSE,ground
-1,1,Archers,3,common,unit,FALSE,all
-2,2,Goblins,2,common,unit,FALSE,ground
-3,3,Giant,5,rare,unit,FALSE,towers
-4,4,P.E.K.K.A,7,epic,unit,FALSE,ground
-5,5,Minions,3,common,unit,TRUE,all
-6,6,Balloon,5,epic,unit,TRUE,towers
-7,7,Witch,5,epic,unit,FALSE,all
-8,8,Barbarians,5,common,unit,FALSE,ground
-9,9,Golem,8,epic,unit,FALSE,towers
-10,10,Skeletons,1,common,unit,FALSE,ground
-11,11,Valkyrie,4,rare,unit,FALSE,ground
-12,12,Skeleton Army,3,epic,unit,FALSE,ground
-13,13,Bomber,2,common,unit,FALSE,ground
-14,14,Musketeer,4,rare,unit,FALSE,all
-15,15,Baby Dragon,4,epic,unit,TRUE,all
-16,16,Prince,5,epic,unit,FALSE,ground
-17,17,Wizard,5,rare,unit,FALSE,all
-18,18,Mini P.E.K.K.A,4,rare,unit,FALSE,ground
-19,19,Spear Goblins,2,common,unit,FALSE,all
-20,20,Giant Skeleton,6,epic,unit,FALSE,ground
-21,21,Hog Rider,4,rare,unit,FALSE,towers
-22,22,Minion Horde,5,common,unit,TRUE,all
-23,23,Ice Wizard,3,legendary,unit,FALSE,all
-24,24,Royal Giant,6,common,unit,FALSE,towers
-25,25,Guards,3,epic,unit,FALSE,ground
-26,26,Princess,3,legendary,unit,FALSE,all
-27,27,Dark Prince,4,epic,unit,FALSE,ground
-28,28,Three Musketeers,9,rare,unit,FALSE,all
-29,29,Lava Hound,7,legendary,unit,TRUE,towers
-30,30,Ice Spirit,1,common,unit,FALSE,all
-31,31,Fire Spirit,1,common,unit,FALSE,all
-32,32,Miner,3,legendary,unit,FALSE,ground
-33,33,Sparky,6,legendary,unit,FALSE,ground
-34,34,Bowler,5,epic,unit,FALSE,ground
-35,35,Lumberjack,4,legendary,unit,FALSE,ground
-36,36,Battle Ram,4,rare,unit,FALSE,towers
-37,37,Inferno Dragon,4,legendary,unit,TRUE,all
-38,38,Ice Golem,2,common,unit,FALSE,towers
-39,39,Mega Minion,3,rare,unit,TRUE,all
-40,40,Dart Goblin,3,rare,unit,FALSE,all
-41,41,Goblin Gang,3,common,unit,FALSE,all
-42,42,Electro Wizard,4,legendary,unit,FALSE,all
-43,43,Elite Barbarians,6,common,unit,FALSE,ground
-44,44,Hunter,4,epic,unit,FALSE,all
-45,45,Executioner,5,epic,unit,FALSE,all
-46,46,Bandit,3,legendary,unit,FALSE,ground
-47,47,Royal Recruits,7,common,unit,FALSE,ground
-48,48,Night Witch,4,legendary,unit,FALSE,ground
-49,49,Bats,2,common,unit,TRUE,all
-50,50,Royal Ghost,3,legendary,unit,FALSE,ground
-51,51,Ram Rider,5,legendary,unit,FALSE,towers
-52,52,Zappies,4,rare,unit,FALSE,all
-53,53,Rascals,5,common,unit,FALSE,all
-54,54,Cannon Cart,5,epic,unit,FALSE,ground
-55,55,Mega Knight,7,legendary,unit,FALSE,ground
-56,56,Skeleton Barrel,3,common,unit,TRUE,towers
-57,57,Flying Machine,4,rare,unit,TRUE,all
-58,58,Wall Breakers,2,epic,unit,FALSE,towers
-59,59,Royal Hogs,5,rare,unit,FALSE,towers
-60,60,Goblin Giant,6,epic,unit,FALSE,towers
-61,61,Fisherman,3,legendary,unit,FALSE,ground
-62,62,Magic Archer,4,legendary,unit,FALSE,all
-63,63,Electro Dragon,5,epic,unit,TRUE,all
-64,64,Firecracker,3,common,unit,FALSE,all
-65,65,Elixir Golem,3,rare,unit,FALSE,towers
-66,66,Battle Healer,4,rare,unit,FALSE,ground
-67,67,Skeleton King,4,champion,unit,FALSE,ground
-68,68,Archer Queen,4,champion,unit,FALSE,all
-69,69,Golden Knight,4,champion,unit,FALSE,ground
-70,70,Skeleton Dragons,4,common,unit,TRUE,all
-71,71,Mother Witch,4,legendary,unit,FALSE,all
-72,72,Electro Spirit,1,common,unit,FALSE,all
-73,73,Electro Giant,7,epic,unit,FALSE,towers
-74,74,Cannon,,,,,
-75,75,Goblin Hut,,,,,
-76,76,Mortar,,,,,
-77,77,Inferno Tower,,,,,
-78,78,Bomb Tower,,,,,
-79,79,Barbarian Hut,,,,,
-80,80,Tesla,,,,,
-81,81,Elixir Collector,,,,,
-82,82,X-Bow,,,,,
-83,83,Tombstone,,,,,
-84,84,Furnace,,,,,
-85,85,Goblin Cage,,,,,
-86,86,Goblin Drill,,,,,
-87,87,Fireball,,,,,
-88,88,Arrows,,,,,
-89,89,Rage,,,,,
-90,90,Rocket,,,,,
-91,91,Goblin Barrel,,,,,
-92,92,Freeze,,,,,
-93,93,Mirror,,,,,
-94,94,Lightning,,,,,
-95,95,Zap,,,,,
-96,96,Poison,,,,,
-97,97,Graveyard,,,,,
-98,98,The Log,,,,,
-99,99,Tornado,,,,,
-100,100,Clone,,,,,
-101,101,Earthquake,,,,,
-102,102,Barbarian Barrel,,,,,
-103,103,Heal Spirit,,,,,
-104,104,Giant Snowball,,,,,
-105,105,Royal Delivery,,,,,
+,id,card,cost,rarity,type,isFlying,target,troop_spawned
+0,0,Knight,3,common,unit,FALSE,ground,
+1,1,Archers,3,common,unit,FALSE,all,
+2,2,Goblins,2,common,unit,FALSE,ground,
+3,3,Giant,5,rare,unit,FALSE,towers,
+4,4,P.E.K.K.A,7,epic,unit,FALSE,ground,
+5,5,Minions,3,common,unit,TRUE,all,
+6,6,Balloon,5,epic,unit,TRUE,towers,
+7,7,Witch,5,epic,unit,FALSE,all,Skeletons
+8,8,Barbarians,5,common,unit,FALSE,ground,
+9,9,Golem,8,epic,unit,FALSE,towers,Golemites
+10,10,Skeletons,1,common,unit,FALSE,ground,
+11,11,Valkyrie,4,rare,unit,FALSE,ground,
+12,12,Skeleton Army,3,epic,unit,FALSE,ground,
+13,13,Bomber,2,common,unit,FALSE,ground,
+14,14,Musketeer,4,rare,unit,FALSE,all,
+15,15,Baby Dragon,4,epic,unit,TRUE,all,
+16,16,Prince,5,epic,unit,FALSE,ground,
+17,17,Wizard,5,rare,unit,FALSE,all,
+18,18,Mini P.E.K.K.A,4,rare,unit,FALSE,ground,
+19,19,Spear Goblins,2,common,unit,FALSE,all,
+20,20,Giant Skeleton,6,epic,unit,FALSE,ground,
+21,21,Hog Rider,4,rare,unit,FALSE,towers,
+22,22,Minion Horde,5,common,unit,TRUE,all,
+23,23,Ice Wizard,3,legendary,unit,FALSE,all,
+24,24,Royal Giant,6,common,unit,FALSE,towers,
+25,25,Guards,3,epic,unit,FALSE,ground,
+26,26,Princess,3,legendary,unit,FALSE,all,
+27,27,Dark Prince,4,epic,unit,FALSE,ground,
+28,28,Three Musketeers,9,rare,unit,FALSE,all,
+29,29,Lava Hound,7,legendary,unit,TRUE,towers,Lava Pups
+30,30,Ice Spirit,1,common,unit,FALSE,all,
+31,31,Fire Spirit,1,common,unit,FALSE,all,
+32,32,Miner,3,legendary,unit,FALSE,ground,
+33,33,Sparky,6,legendary,unit,FALSE,ground,
+34,34,Bowler,5,epic,unit,FALSE,ground,
+35,35,Lumberjack,4,legendary,unit,FALSE,ground,
+36,36,Battle Ram,4,rare,unit,FALSE,towers,Barbarians
+37,37,Inferno Dragon,4,legendary,unit,TRUE,all,
+38,38,Ice Golem,2,rare,unit,FALSE,towers,
+39,39,Mega Minion,3,rare,unit,TRUE,all,
+40,40,Dart Goblin,3,rare,unit,FALSE,all,
+41,41,Goblin Gang,3,common,unit,FALSE,all,
+42,42,Electro Wizard,4,legendary,unit,FALSE,all,
+43,43,Elite Barbarians,6,common,unit,FALSE,ground,
+44,44,Hunter,4,epic,unit,FALSE,all,
+45,45,Executioner,5,epic,unit,FALSE,all,
+46,46,Bandit,3,legendary,unit,FALSE,ground,
+47,47,Royal Recruits,7,common,unit,FALSE,ground,
+48,48,Night Witch,4,legendary,unit,FALSE,ground,Bats
+49,49,Bats,2,common,unit,TRUE,all,
+50,50,Royal Ghost,3,legendary,unit,FALSE,ground,
+51,51,Ram Rider,5,legendary,unit,FALSE,towers,
+52,52,Zappies,4,rare,unit,FALSE,all,
+53,53,Rascals,5,common,unit,FALSE,all,
+54,54,Cannon Cart,5,epic,unit,FALSE,ground,
+55,55,Mega Knight,7,legendary,unit,FALSE,ground,
+56,56,Skeleton Barrel,3,common,unit,TRUE,towers,Skeletons
+57,57,Flying Machine,4,rare,unit,TRUE,all,
+58,58,Wall Breakers,2,epic,unit,FALSE,towers,
+59,59,Royal Hogs,4,rare,unit,FALSE,towers,
+60,60,Goblin Giant,6,epic,unit,FALSE,towers,Spear Goblins
+61,61,Fisherman,3,legendary,unit,FALSE,ground,
+62,62,Magic Archer,4,legendary,unit,FALSE,all,
+63,63,Electro Dragon,5,epic,unit,TRUE,all,
+64,64,Firecracker,3,common,unit,FALSE,all,
+65,65,Elixir Golem,3,rare,unit,FALSE,towers,Elixer Golemites
+66,66,Battle Healer,4,rare,unit,FALSE,ground,
+67,67,Skeleton King,4,champion,unit,FALSE,ground,Skeletons
+68,68,Archer Queen,4,champion,unit,FALSE,all,
+69,69,Golden Knight,4,champion,unit,FALSE,ground,
+70,70,Skeleton Dragons,4,common,unit,TRUE,all,
+71,71,Mother Witch,4,legendary,unit,FALSE,all,Pigs
+72,72,Electro Spirit,1,common,unit,FALSE,all,
+73,73,Electro Giant,7,epic,unit,FALSE,towers,
+74,74,Cannon,3,common,defense,,ground,
+75,75,Goblin Hut,5,rare,spawner,,,Spear Goblins
+76,76,Mortar,4,common,siege,,ground,
+77,77,Inferno Tower,5,rare,defense,,all,
+78,78,Bomb Tower,4,rare,defense,,ground,
+79,79,Barbarian Hut,6,rare,spawner,,,Barbarians
+80,80,Tesla,4,common,defense,,all,
+81,81,Elixir Collector,6,rare,building,,,
+82,82,X-Bow,6,epic,siege,,ground,
+83,83,Tombstone,3,common,spawner,,,Skeletons
+84,84,Furnace,4,rare,spawner,,,Fire Spirit
+85,85,Goblin Cage,4,rare,building,,,Goblin Brawler
+86,86,Goblin Drill,4,epic,spawner,,,Goblins
+87,87,Fireball,4,rare,spell,,all,
+88,88,Arrows,3,common,spell,,all,
+89,89,Rage,2,epic,spell,,all,
+90,90,Rocket,6,rare,spell,,all,
+91,91,Goblin Barrel,3,epic,spell,,,Goblins
+92,92,Freeze,4,epic,spell,,all,
+93,93,Mirror,0,epic,spell,,all,Any
+94,94,Lightning,6,epic,spell,,all,
+95,95,Zap,2,common,spell,,all,
+96,96,Poison,4,epic,spell,,all,
+97,97,Graveyard,5,legendary,spell,,,Skeletons
+98,98,The Log,2,legendary,spell,,ground,
+99,99,Tornado,3,epic,spell,,all,
+100,100,Clone,3,epic,spell,,units,Any
+101,101,Earthquake,3,rare,spell,,ground,
+102,102,Barbarian Barrel,2,epic,spell,,ground,Barbarians
+103,103,Heal Spirit,1,rare,unit,FALSE,all,
+104,104,Giant Snowball,2,common,spell,,all,
+105,105,Royal Delivery,3,common,spell,,all,Royal Recruits
+106,106,Lava Pups,,legendary,unit,TRUE,all,
+107,107,Golemites,,epic,unit,FALSE,towers,
+108,108,Elixer Golemites,,rare,unit,FALSE,towers,Elixer Blobs
+109,109,Elixer Blobs,,rare,unit,FALSE,towers,
+110,110,Pigs,,legendary,unit,FALSE,towers,
+111,111,Goblin Brawler,,rare,unit,FALSE,ground,

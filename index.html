@@ -14566,9 +14566,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Final-Project-Title">Final Project Title<a class="anchor-link" href="#Final-Project-Title">&#182;</a></h1><h2 id="Yash-Joon,-Brendan-Collins,-Thien-An-Nguyen,-Rennie-Pearson">Yash Joon, Brendan Collins, Thien-An Nguyen, Rennie Pearson<a class="anchor-link" href="#Yash-Joon,-Brendan-Collins,-Thien-An-Nguyen,-Rennie-Pearson">&#182;</a></h2><p><img src="Clash.jpeg" alt="Alternative text" width ="500" height = "500"/></p>
-<h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h2><p>Clash royale is a tower defense strategy game in which players create a deck of 8 cards and battle each other to destroy each other’s towers. The cards are characters within the game that can either defend against enemy cards or attack the enemy. Cards cost elixir to be played which is generated continuously throughout the game. The cards fall into three different type categories, units, spells, and buildings. The type of the card describes its behavior within the game. The cards are also split into different “rarities”, common, rare, epic, legendary, and champion. Many players have the belief that higher rarity cards will aid players in winning more games, making the game “pay to win”.</p>
+<h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h2><p>Clash royale is a tower defense strategy game in which players create a deck of 8 cards and battle each other to destroy opponent's tower. The cards are characters within the game that can either defend against enemy cards or attack the enemy. Cards cost elixir to be played which is generated continuously throughout the game. The cards fall into three different type categories, units, spells, and buildings which includes spawners, defense and siege cards. The type of the card describes its behavior within the game. The cards are also split into different rarities: common, rare, epic, legendary, and champion. Many players believe that higher rarity cards will aid players in winning more games, making the game “pay to win”.</p>
 <p>In this analysis, we aim to find the most optimal deck(s) based on various factors. These factors include rarity, occurrence, type, cost, and winrate of a card and of a deck. We also will determine if higher rarity cards actually do lead to higher win rate, making the game “pay to win.”</p>
-<h2 id="Data-Collection/Curation">Data Collection/Curation<a class="anchor-link" href="#Data-Collection/Curation">&#182;</a></h2><h3 id="Obtaining-the-Dataset">Obtaining the Dataset<a class="anchor-link" href="#Obtaining-the-Dataset">&#182;</a></h3><p>This dataset is a publicly available dataset obtained from <a href="https://www.kaggle.com/datasets/nonrice/clash-royale-battles-upper-ladder-december-2021?resource=download">Kaggle</a>. This dataset consists of two csv files, data_ord.csv and cardlist.csv. The data_ord.csv file contains information from roughly 750000 matches including the decks both players used, their respective ranks within the game, and who won. The cardlist.csv file contains a list of all the cards present in the game for the release of the game tied to this data. The card list only included the name of the card along with an id.</p>
+<h2 id="Data-Collection/Curation">Data Collection/Curation<a class="anchor-link" href="#Data-Collection/Curation">&#182;</a></h2><h3 id="Obtaining-the-Dataset">Obtaining the Dataset<a class="anchor-link" href="#Obtaining-the-Dataset">&#182;</a></h3><p>This dataset is a publicly available dataset obtained from <a href="https://www.kaggle.com/datasets/nonrice/clash-royale-battles-upper-ladder-december-2021?resource=download">Kaggle</a>. It consists of two csv files, data_ord.csv and cardlist.csv. The data_ord.csv file contains information from about 750000 matches including the decks both players used, their respective ranks within the game, and who won. The cardlist.csv file contains a list of all the cards present in the game for the version of the game tied to this data. The card list only included the name of the card along with an id.</p>
 <h3 id="Adding-Relevant-Information-to-the-Dataset">Adding Relevant Information to the Dataset<a class="anchor-link" href="#Adding-Relevant-Information-to-the-Dataset">&#182;</a></h3><ul>
 <li>In the data_ord.csv, we updated the outcome of the match to correspond with the player number, either 1 or 2. </li>
 <li>Significant changes were made to the cardlist.csv file. We added columns indicating elixir cost, rarity, type, whether a unit is flying, the targets of a card, and whether a card spawns other units.</li>
@@ -14624,7 +14624,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Finding-Each-Card">Finding Each Card<a class="anchor-link" href="#Finding-Each-Card">&#182;</a></h3><p>Within the cardlist.csv, there are 112 unique cards present in the data.</p>
-<p>For each card, we want to find the number of occurrences. To do this, we analyzed the data_card_list dataframe and determined the number of wins and occurrences of each card. It was found that there are 106 used cards of the 112 cards in cardlist.csv. From that information, we were able to determine the winrate of each card and then got the corresponding name, cost, type, and rarity from the data_card_list dataframe.</p>
+<p>For each card, we want to find the number of occurrences. To do this, we analyzed the data_games dataframe and determined the number of wins and occurrences of each card, cross checking the ID from data_games with data_card_list. It was found that there are 106 used cards of the 112 cards in cardlist.csv. From that information, we were able to determine the win rate of each card and then got the corresponding name, cost, type, and rarity from the data_card_list dataframe.</p>
 
 </div>
 </div>
@@ -14660,7 +14660,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
         <span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span>
     
 <span class="n">lst</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="c1"># Apply function to all values in each game</span>
+<span class="c1"># Apply function to all card IDs in each game</span>
 <span class="n">data_games</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">get_card_occurence</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="s2">&quot;p1card1&quot;</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="s2">&quot;p1card2&quot;</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="s2">&quot;p1card3&quot;</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="s2">&quot;p1card4&quot;</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="s2">&quot;p1card5&quot;</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="s2">&quot;p1card6&quot;</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="s2">&quot;p1card7&quot;</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="s2">&quot;p1card8&quot;</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="s2">&quot;p2card1&quot;</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="s2">&quot;p2card2&quot;</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="s2">&quot;p2card3&quot;</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="s2">&quot;p2card4&quot;</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="s2">&quot;p2card5&quot;</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="s2">&quot;p2card6&quot;</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="s2">&quot;p2card7&quot;</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="s2">&quot;p2card8&quot;</span><span class="p">]],</span><span class="n">x</span><span class="p">[</span><span class="s2">&quot;outcome&quot;</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># Gets the total occurrence of each card</span>
@@ -14783,7 +14783,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h4 id="Gathering-Important-Card-Data">Gathering Important Card Data<a class="anchor-link" href="#Gathering-Important-Card-Data">&#182;</a></h4><p>While going through to determine the number of occurrences, we also determined the number of wins of each card to then be able to calculate the win rate of each card. In doing so, we then realize we’d have to take into account the number of wins relative to the number of occurrences. For example, a card with a high win rate but very few games played isn’t all that meaningful to our data and any possible correlations.</p>
-<p>To go a step further in exploring data relative to cards, we wanted to look at the specifics of a card's attributes and determine any rates based off of them. Every card has a type (unit, spell, spawner, building, siege, defense), elixir cost (0-9), and rarity (common, rare, epic, legendary, champion). Going through the card_df dataframe, each card has these attributes labeled so to find the win rate for each classification of a particular attribute, we took the average win rate of each card containing that attribute and graphed each attribute by category comparing the win rate and occurrences.</p>
+<p>To go a step further in exploring data relative to cards, we wanted to look at the specifics of a card's attributes and determine any rates based off of them. As mentioned, every card has a type (unit, spell, spawner, building, siege, defense), elixir cost (0-9), and rarity (common, rare, epic, legendary, champion). Going through the card_df dataframe, each card has these attributes labeled so to find the win rate for each classification of a particular attribute, we took the average win rate of each card containing that attribute and graphed each attribute by category comparing the win rate and occurrences.</p>
 
 </div>
 </div>
@@ -15523,7 +15523,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Sorting by occurrence, we can find the top 5 popular cards. The fireball is the most popular with 45000 occurrences which may be because it is accessible to players almost immediately when they start.</p>
+<p>Sorting by occurrence, we can find the top 5 popular cards. The fireball is the most popular with 45,000 occurrences which may be because it is accessible to players almost immediately when they start.</p>
 
 </div>
 </div>
@@ -15665,7 +15665,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Similarly to most popular, we can do the same with least popular. We see that the least used card is Barbarian Hut with only 5542 occurrences in total. The other four cards have similar values ranging from 12500 to 15300.</p>
+<p>We see that the least used card is Barbarian Hut with only 5542 occurrences in total. The other four cards have similar values ranging from 12500 to 15300.</p>
 <h4 id="Finding-the-Highest-Win-Rate-Cards">Finding the Highest Win Rate Cards<a class="anchor-link" href="#Finding-the-Highest-Win-Rate-Cards">&#182;</a></h4>
 </div>
 </div>
@@ -16000,7 +16000,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>From this scatter plot, we can see that the majority of cards have a Win Rate of greater than or equal to 50%. However, it is also shown that the upside of .5 has a smaller range than the downside. This means that a win rate greater than 50% is likely to only be better by a smaller range whereas a win rate less than 50% is going to be worse by a large range.</p>
+<p>From this scatter plot, we can see that the majority of cards have a win rate of greater than or equal to 50%. However, it is also shown that the upside of .5 has a smaller range than the downside. This means that a win rate greater than 50% is likely to only be better by a smaller range whereas a win rate less than 50% is going to be worse by a large range.</p>
 <h4 id="Analyzing-win-rate-based-on-rarity">Analyzing win rate based on rarity<a class="anchor-link" href="#Analyzing-win-rate-based-on-rarity">&#182;</a></h4><p>For this block, we will look at how win rate is affected by the rarity of the card. We want to know the mean as well as the ranges these values are in.</p>
 
 </div>
@@ -16454,7 +16454,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The second part of analysis is looking at which decks won the most. Interestingly, the third most common deck has less wins than the fourth most common deck, despite having almost 20000 more games.</p>
+<p>The second part of analysis is looking at which decks won the most. Interestingly, the third most common deck has less wins than the fourth most common deck, despite having almost 20,000 more games.</p>
 
 </div>
 </div>
@@ -16871,7 +16871,7 @@ Deck:  Skeleton Army, Prince, Royal Giant, Princess, Dart Goblin, Bats, Mega Kni
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The most common rarity composition is 0 champions and 2 legendaries, 2 epics, 2 rares and 2 commons. Champions are notable not found in any of the top 5 most common compositions. This could be because they are difficult to unlock. Also, most deck compositions are pretty diverse in terms of legendaries, epics, rares and commons.</p>
+<p>The most common rarity composition is 0 champions and 2 legendaries, 2 epics, 2 rares and 2 commons. Champions are notably not found in any of the top 5 most common compositions. This could be because they are difficult to unlock. Also, most deck compositions are pretty diverse in terms of legendaries, epics, rares and commons.</p>
 <h5 id="Finding-the-least-common-rarity-compositions">Finding the least common rarity compositions<a class="anchor-link" href="#Finding-the-least-common-rarity-compositions">&#182;</a></h5><p>We find the 5 least common rarity compositions</p>
 
 </div>
@@ -17317,7 +17317,7 @@ Deck:  Knight, Skeletons, Bomber, Spear Goblins, Ice Spirit, Goblin Gang, Bats, 
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>From this distribution plot, we can see that the deck average elixir costs have a normal distribution with a peak of ~38,000 decks with a ~3.8 average elixir cost.</p>
+<p>From this distribution plot, we can see that the deck average elixir costs have a normal distribution with a peak of ~38,000 decks with an average elixir cost of ~3.8.</p>
 <p>The resulting summary statistics were as follows: min = 1.125, max = 7.25, median = 3.875, and mean = 3.841.</p>
 <p>This correlates well with the distribution plot.</p>
 <p>This means that in the game, the majority of decks have around 3.8 average elixir cost.</p>
@@ -17557,8 +17557,7 @@ Deck:  Knight, Skeletons, Bomber, Spear Goblins, Ice Spirit, Goblin Gang, Bats, 
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Deck average elixir cost vs deck average trophies binned violin plot</p>
-
+<h4 id="Deck-average-elixir-cost-vs-deck-average-trophies-binned-violin-plot">Deck average elixir cost vs deck average trophies binned violin plot<a class="anchor-link" href="#Deck-average-elixir-cost-vs-deck-average-trophies-binned-violin-plot">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -19203,7 +19202,7 @@ Pearsons correlation pval: 1.022831e-09
 <li>Skeleton Dragons </li>
 </ul>
 <p>Many parts of this deck are consistent with our findings. All the cards in our deck had a win rate above 50%, despite seeing significant play. A win rate above 50% indicates that our deck would help a player increase their rank. Three of the eight cards in our deck are amongst the top 5 highest win rate cards. These were Cannon Cart, Bowler, and Skeleton Dragons. Additionally, our deck consisted of six units which was the most frequent number of units in a composition. In terms of rarity composition, our deck was somewhat standard. The most frequent number of occurrences for commons, rares and epics was 2. In our deck, there are 2 commons, 3 rares, and 3 epics.</p>
-<p>There were many surprising aspects of this deck. Our optimal deck had no spells and two buildings. We found that most decks utilized no buildings whatsoever whereas a high number of decks had an average of two spells. We found that the building type has a weak negative correlation with win rate meaning that the more buildings in a deck, the worse a deck is found to be. In contrast,  the spell type had a weak positive correlation with win rate. Despite this, it did not show up at all. However, this does not mean that the deck is bad. The correlations were so weak that we agreed player skill was the determining factor in what makes a good deck. Decks do not need to be built a certain way to compete.</p>
+<p>There were many surprising aspects of this deck. Our optimal deck had no spells and two buildings. We found that most decks utilized no buildings whatsoever whereas a high number of decks had an average of two spells. We found that the building type has a weak negative correlation with win rate meaning that the more buildings in a deck, the worse that deck is found to be. In contrast,  the spell type had a weak positive correlation with win rate. Despite this, it did not show up at all. However, this does not mean that the deck is bad. The correlations were so weak that we agreed player skill was the determining factor in what makes a good deck. Decks do not need to be built a certain way to compete.</p>
 <p>From our findings, we believe the game is not “pay-to-win” because there are no champion rarity cards in our most optimal deck, and there are no legendary rarity cards in our most optimal deck. Our deck consisted of cards with “epic” or lower rarity which are easily obtainable by the average player. In the future, we may continue this analysis by looking at data that also includes each card’s level. The matches we sampled are from high ranks, meaning most of these players would have similar cards with similar levels. In lower ranks, this is not always the case and one could argue level advantage is more important than deck composition. Examining whether this claim is true would be a good way to further disprove that this game is “pay-to-win.”</p>
 
 </div>
